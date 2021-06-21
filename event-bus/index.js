@@ -13,6 +13,8 @@ app.post('/events', async (req, res) => {
   await axios.post('http://localhost:4001/events', event);
   // send to query service
   await axios.post('http://localhost:4002/events', event);
+  // send to moderation service
+  await axios.post('http://localhost:4003/events', event);
   res.send({status: 'OK'});
 });
 
