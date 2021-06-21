@@ -15,6 +15,7 @@ app.get('/posts', (req, res) => {
   res.send(posts);
 });
 
+
 app.post('/posts', async (req, res) => {
   // generate a random id
   const id = randomBytes(4).toString('hex');
@@ -29,6 +30,10 @@ app.post('/posts', async (req, res) => {
   })
 
   res.status(201).send(posts[id]);
+});
+app.post('/events', (req, res) => {
+  console.log(`zavanton - received event in posts`, req.body.type);
+  res.send({});
 });
 
 app.listen(4000, () => {
