@@ -47,7 +47,7 @@ app.listen(4002, async () => {
   console.log(`zavanton - listening on 4002`);
 
   // get all the events which have been sent before the service is started
-  const res = await axios.get('http://localhost:4005/events');
+  const res = await axios.get('http://event-bus-srv:4005/events');
   for(let event of res.data){
     console.log(`zavanton - processing event:`, event.type);
     handleEvent(event.type, event.data);
