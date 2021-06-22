@@ -14,13 +14,13 @@ app.post('/events', async (req, res) => {
   events.push(event);
 
   // send to posts
-  await axios.post('http://localhost:4000/events', event);
-  // send to comments
-  await axios.post('http://localhost:4001/events', event);
-  // send to query service
-  await axios.post('http://localhost:4002/events', event);
-  // send to moderation service
-  await axios.post('http://localhost:4003/events', event);
+  await axios.post('http://posts-clusterip-srv:4000/events', event);
+  // // send to comments
+  // await axios.post('http://localhost:4001/events', event);
+  // // send to query service
+  // await axios.post('http://localhost:4002/events', event);
+  // // send to moderation service
+  // await axios.post('http://localhost:4003/events', event);
   res.send({status: 'OK'});
 });
 
