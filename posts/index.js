@@ -12,11 +12,13 @@ app.use(cors());
 const posts = {};
 
 app.get('/posts', (req, res) => {
+  console.log(`zavanton - get all posts`);
   res.send(posts);
 });
 
 
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
+  console.log(`zavanton - create a post`);
   // generate a random id
   const id = randomBytes(4).toString('hex');
   const {title} = req.body;
@@ -37,6 +39,6 @@ app.post('/events', (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log(`zavanton - version 56`);
+  console.log(`zavanton - version 57`);
   console.log(`zavanton - listening on 4000`);
 });
