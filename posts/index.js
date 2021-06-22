@@ -39,6 +39,6 @@ app.post('/events', (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log(`zavanton - version 57`);
+  console.log(`zavanton - version 60`);
   console.log(`zavanton - listening on 4000`);
 });
